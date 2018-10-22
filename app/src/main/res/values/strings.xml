@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestPropertyAnim</string>
+
+    <!--battery charging-->
+    <string name="battery_charging">CHARGING</string>
+    <string name="battery_charge_time">you have charged </string>
+    <string name="battery_charge_complete">Charge Complete</string>
+</resources>
