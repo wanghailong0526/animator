@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DynamicHeartView mDynamicHeartView = findViewById(R.id.view_heart);
         mDynamicHeartView.startPathAnim(2000);
         RadarView viewById = findViewById(R.id.radarView);
-        viewById.start();
+//        viewById.start();
         mLuckyPan.setOnClickListener(this);
         mTestPaint.setOnClickListener(this);
         mBattery.setOnClickListener(this);
