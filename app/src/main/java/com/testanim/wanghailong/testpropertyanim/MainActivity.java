@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.testanim.wanghailong.testpropertyanim.activites.BatteryActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.LuckyPanActivity;
+import com.testanim.wanghailong.testpropertyanim.activites.MyEditTextActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.PaintActivity;
 import com.testanim.wanghailong.testpropertyanim.customerClass.DynamicHeartView;
 import com.testanim.wanghailong.testpropertyanim.customerClass.RadarView;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLuckyPan.setOnClickListener(this);
         mTestPaint.setOnClickListener(this);
         mBattery.setOnClickListener(this);
+        findViewById(R.id.my_edit_text).setOnClickListener(this);
 //        TextView tv = findViewById(R.id.tv);
 //        ObjectAnimator animatorAlpha = ObjectAnimator.ofFloat(tv, "alpha", 1, 0, 1);
 //        animatorAlpha.setDuration(5000);
@@ -120,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.battery_view:
                 BatteryActivity.start(this);
+                break;
+            case R.id.my_edit_text:
+                MyEditTextActivity.start(this);
                 break;
         }
     }

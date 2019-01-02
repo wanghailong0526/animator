@@ -19,6 +19,7 @@
         <activity android:name=".activites.LuckyPanActivity" />
         <activity android:name=".activites.PaintActivity" />
         <activity android:name=".activites.BatteryActivity" />
+        <activity android:name=".activites.MyEditTextActivity" />
     </application>
 
 </manifest>

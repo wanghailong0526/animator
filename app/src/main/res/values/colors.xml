@@ -13,6 +13,7 @@
     <color name="battery_optimize_bg">#36b3b9</color>
     <color name="battery_optimize_scan_bg">#4Dffffff</color>
     <color name="battery_optimize_scan_bg_BG">#BFffffff</color>
+    <color name="black">#ff000000</color>
 
 
 </resources>

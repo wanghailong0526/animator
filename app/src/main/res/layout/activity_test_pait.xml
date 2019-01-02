@@ -76,9 +76,15 @@
                 android:layout_height="200dp" />
 
             <com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcScanView
-                android:layout_width="200dp"
                 android:id="@+id/arc_scanview"
+                android:layout_width="200dp"
                 android:layout_height="200dp" />
+
+            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.FontView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white1"
+                android:paddingLeft="@dimen/dp_10" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
