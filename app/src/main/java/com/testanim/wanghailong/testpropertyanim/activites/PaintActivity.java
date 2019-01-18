@@ -19,6 +19,7 @@ import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcProgress
 import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcScanView;
 import com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView;
 import com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView1;
+import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ScanView;
 
 public class PaintActivity extends AppCompatActivity {
     private int i = 0;
@@ -27,6 +28,7 @@ public class PaintActivity extends AppCompatActivity {
     private BatteryImageView2 mBatteryView;
     private WaveView mWaveView;
     private ArcScanView mArcScanView;
+    private ScanView mScanView;
 
     public static void start(Context context) {
         Intent intent = new Intent();
@@ -42,6 +44,7 @@ public class PaintActivity extends AppCompatActivity {
         mArcScanView = findViewById(R.id.arc_scanview);
         mBatteryView = findViewById(R.id.battery_view);
         mWaveView = findViewById(R.id.waveView);
+        mScanView = findViewById(R.id.scan_view);
         RadarView1 mRadarView = findViewById(R.id.randerViewPoint);
         RadarView mRadarViewSelf = findViewById(R.id.radarView);
         ArcProgress mArcProgress = findViewById(R.id.arcprogress);
@@ -55,6 +58,19 @@ public class PaintActivity extends AppCompatActivity {
         mWaveView.start();
         mRadarViewSelf.start();
         handler.sendEmptyMessage(0);
+
+        initAnimation();
+    }
+
+    /**
+     * 初始化ScanVeiw
+     */
+    private void initAnimation() {
+        mScanView.setSnowDrawable(R.drawable.out_icon_phone_out);
+        mScanView.setDstDrawable(R.drawable.out_icon_phone_inner);
+        mScanView.setScanLineDrawable(R.drawable.icon_scan_line, R.drawable.icon_scan_line_up);
+        mScanView.setDuration(5000);
+        mScanView.start();
     }
 
     @SuppressLint("HandlerLeak")
@@ -81,5 +97,19 @@ public class PaintActivity extends AppCompatActivity {
             }
         });
         arcScanValueAnimator.start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mScanView.start();
+        mWaveView.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mScanView.stop();
+        mWaveView.stop();
     }
 }
