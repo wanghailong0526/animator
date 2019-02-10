@@ -123,7 +123,7 @@ public class TextWave extends View {
 
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
 
-        //绘制 绘制源图像
+        //绘制 绘制源图像(绘制文本第二遍)
         canvas.drawBitmap(mSrcBitmap, 100, 100, mPaint);
 
         mPaint.setXfermode(null);
