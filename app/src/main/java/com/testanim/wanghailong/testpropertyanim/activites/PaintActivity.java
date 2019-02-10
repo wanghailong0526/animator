@@ -20,6 +20,7 @@ import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcScanView
 import com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView;
 import com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView1;
 import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ScanView;
+import com.testanim.wanghailong.testpropertyanim.customerClass.paint.xfermode.TextWave;
 
 public class PaintActivity extends AppCompatActivity {
     private int i = 0;
@@ -29,6 +30,7 @@ public class PaintActivity extends AppCompatActivity {
     private WaveView mWaveView;
     private ArcScanView mArcScanView;
     private ScanView mScanView;
+    private TextWave mTextWave;
 
     public static void start(Context context) {
         Intent intent = new Intent();
@@ -45,6 +47,7 @@ public class PaintActivity extends AppCompatActivity {
         mBatteryView = findViewById(R.id.battery_view);
         mWaveView = findViewById(R.id.waveView);
         mScanView = findViewById(R.id.scan_view);
+        mTextWave = findViewById(R.id.text_wave);
         RadarView1 mRadarView = findViewById(R.id.randerViewPoint);
         RadarView mRadarViewSelf = findViewById(R.id.radarView);
         ArcProgress mArcProgress = findViewById(R.id.arcprogress);
@@ -55,8 +58,13 @@ public class PaintActivity extends AppCompatActivity {
         mWaveView.setColor(android.R.color.black);
 
         initData();
+
+        /***********动画开始************/
         mWaveView.start();
         mRadarViewSelf.start();
+        mTextWave.startAnim();
+
+
         handler.sendEmptyMessage(0);
 
         initAnimation();
@@ -111,5 +119,6 @@ public class PaintActivity extends AppCompatActivity {
         super.onPause();
         mScanView.stop();
         mWaveView.stop();
+        mTextWave.stopAnim();
     }
 }

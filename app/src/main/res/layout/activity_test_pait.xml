@@ -90,6 +90,15 @@
                 android:id="@+id/scan_view"
                 android:layout_width="200dp"
                 android:layout_height="200dp" />
+
+            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.xfermode.Xfermode_Multiply
+                android:layout_width="@dimen/dp_230"
+                android:layout_height="403dp" />
+
+            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.xfermode.TextWave
+                android:layout_width="@dimen/dp_200"
+                android:id="@+id/text_wave"
+                android:layout_height="@dimen/dp_200" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
