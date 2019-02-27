@@ -9,18 +9,17 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
 import com.testanim.wanghailong.testpropertyanim.R;
-import com.testanim.wanghailong.testpropertyanim.customerClass.BatteryImageView2;
-import com.testanim.wanghailong.testpropertyanim.customerClass.WaveView;
-import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcProgress;
-import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcScanView;
-import com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView;
-import com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView1;
-import com.testanim.wanghailong.testpropertyanim.customerClass.paint.ScanView;
-import com.testanim.wanghailong.testpropertyanim.customerClass.paint.xfermode.TextWave;
+import com.testanim.wanghailong.testpropertyanim.customview.BatteryImageView2;
+import com.testanim.wanghailong.testpropertyanim.customview.WaveView;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcScanView;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.RadarView;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.RadarView1;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.ScanView;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.TextWave;
 
 public class PaintActivity extends AppCompatActivity {
     private int i = 0;

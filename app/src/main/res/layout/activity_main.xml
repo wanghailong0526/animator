@@ -157,7 +157,7 @@
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent" />-->
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.DynamicHeartView
+            <com.testanim.wanghailong.testpropertyanim.customview.DynamicHeartView
                 android:id="@+id/view_heart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -166,19 +166,19 @@
             <!--<com.testanim.wanghailong.testpropertyanim.customerClass.GranzortView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent" />-->
-            <com.testanim.wanghailong.testpropertyanim.customerClass.ClearView
+            <com.testanim.wanghailong.testpropertyanim.customview.ClearView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:background="@android:color/black"
                 android:visibility="gone" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.RadarView
+            <com.testanim.wanghailong.testpropertyanim.customview.RadarView
                 android:id="@+id/radarView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.VirusScan
+            <com.testanim.wanghailong.testpropertyanim.customview.VirusScan
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_alignParentTop="true"
@@ -214,6 +214,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="myEditTextView"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
+            <TextView
+                android:id="@+id/no_scroll_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="noScrollView"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
+            <TextView
+                android:id="@+id/test_constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试ConstraintLayout"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
+            <TextView
+                android:id="@+id/test_coordinatorLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试CoordinatorLayout"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
         </LinearLayout>

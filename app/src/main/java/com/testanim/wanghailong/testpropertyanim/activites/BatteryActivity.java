@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.testanim.wanghailong.testpropertyanim.R;
-import com.testanim.wanghailong.testpropertyanim.customerClass.BatteryImageView;
+import com.testanim.wanghailong.testpropertyanim.customview.BatteryImageView;
 
 import org.json.JSONObject;
 

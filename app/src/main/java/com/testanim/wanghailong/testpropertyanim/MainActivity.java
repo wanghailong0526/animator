@@ -8,15 +8,21 @@ import android.widget.TextView;
 import com.testanim.wanghailong.testpropertyanim.activites.BatteryActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.LuckyPanActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.MyEditTextActivity;
+import com.testanim.wanghailong.testpropertyanim.activites.NoScrollActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.PaintActivity;
-import com.testanim.wanghailong.testpropertyanim.customerClass.DynamicHeartView;
-import com.testanim.wanghailong.testpropertyanim.customerClass.RadarView;
+import com.testanim.wanghailong.testpropertyanim.activites.TestConstraintLayoutActivity;
+import com.testanim.wanghailong.testpropertyanim.customview.DynamicHeartView;
+import com.testanim.wanghailong.testpropertyanim.customview.RadarView;
+import com.testanim.wanghailong.testpropertyanim.scroll.CoordinatorLayoutActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mLuckyPan;
     private TextView mTestPaint;
     private TextView mBattery;
+    private TextView mNoscrollView;
+    private TextView mTextConstraintLayout;
+    private TextView mCoordinatorLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLuckyPan = findViewById(R.id.tv_lucky_pan);
         mTestPaint = findViewById(R.id.TestPaint);
         mBattery = findViewById(R.id.battery_view);
+        mNoscrollView = findViewById(R.id.no_scroll_view);
+        mTextConstraintLayout = findViewById(R.id.test_constraintLayout);
+        mCoordinatorLayout = findViewById(R.id.test_coordinatorLayout);
         DynamicHeartView mDynamicHeartView = findViewById(R.id.view_heart);
         mDynamicHeartView.startPathAnim(2000);
         RadarView viewById = findViewById(R.id.radarView);
@@ -32,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLuckyPan.setOnClickListener(this);
         mTestPaint.setOnClickListener(this);
         mBattery.setOnClickListener(this);
+        mNoscrollView.setOnClickListener(this);
+        mTextConstraintLayout.setOnClickListener(this);
+        mCoordinatorLayout.setOnClickListener(this);
+
         findViewById(R.id.my_edit_text).setOnClickListener(this);
 //        TextView tv = findViewById(R.id.tv);
 //        ObjectAnimator animatorAlpha = ObjectAnimator.ofFloat(tv, "alpha", 1, 0, 1);
@@ -125,6 +138,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.my_edit_text:
                 MyEditTextActivity.start(this);
+                break;
+            case R.id.no_scroll_view:
+                NoScrollActivity.start(this);
+                break;
+            case R.id.test_constraintLayout:
+                TestConstraintLayoutActivity.start(this);
+                break;
+            case R.id.test_coordinatorLayout:
+                CoordinatorLayoutActivity.start(this);
                 break;
         }
     }

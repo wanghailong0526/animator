@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ggk="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/battery_charging"
+    android:orientation="vertical">
+
+    <com.testanim.wanghailong.testpropertyanim.customview.paint.MoneySeekBar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:maxHeight="5dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingEnd="0dp"
+        android:paddingRight="@dimen/dp_10"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/clear"
+        android:thumbOffset="0dp"
+        android:thumbTint="@color/colorPrimary" />
+
+    <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.Guaguaka
+        android:id="@+id/view_guaguaka"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal" />
+
+    <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.Guaguaka2
+        android:id="@+id/view_guaguaka2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:visibility="gone" />
+
+    <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.GuaGuaKaFrameLayout
+        android:id="@+id/ggk_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="#3ff3ff"
+        ggk:ggk_foreground="#dddddd"
+        ggk:ggk_percentage="0.4"
+        ggk:ggk_strokeWidth="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="恭喜你中了100000000万，快去领奖吧" />
+
+            <Button
+                android:id="@+id/btn_view_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看详情" />
+        </LinearLayout>
+    </com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.GuaGuaKaFrameLayout>
+
+
+</LinearLayout>

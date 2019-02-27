@@ -15,7 +15,7 @@
         android:scaleType="center"
         android:src="@drawable/icon_close" />
 
-    <com.testanim.wanghailong.testpropertyanim.customerClass.BatteryImageView
+    <com.testanim.wanghailong.testpropertyanim.customview.BatteryImageView
         android:id="@+id/iv_battery_status"
         android:layout_centerHorizontal="true"
         android:layout_width="100dp"

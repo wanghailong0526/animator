@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -20,6 +21,9 @@
         <activity android:name=".activites.PaintActivity" />
         <activity android:name=".activites.BatteryActivity" />
         <activity android:name=".activites.MyEditTextActivity" />
+        <activity android:name=".activites.NoScrollActivity" />
+        <activity android:name=".activites.TestConstraintLayoutActivity" />
+        <activity android:name=".scroll.CoordinatorLayoutActivity" />
     </application>
 
 </manifest>

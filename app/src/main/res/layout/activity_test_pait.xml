@@ -7,7 +7,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_guaguaka">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -15,7 +16,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.CircleImageView
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.CircleImageView
                 android:id="@+id/circleImageView"
                 android:layout_width="@dimen/dp_200"
                 android:layout_height="@dimen/dp_200"
@@ -29,7 +30,7 @@
                 android:layout_gravity="center_vertical"
                 android:gravity="center_horizontal">
 
-                <com.testanim.wanghailong.testpropertyanim.customerClass.BatteryImageView2
+                <com.testanim.wanghailong.testpropertyanim.customview.BatteryImageView2
                     android:id="@+id/battery_view"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -37,7 +38,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true" />
 
-                <com.testanim.wanghailong.testpropertyanim.customerClass.WaveView
+                <com.testanim.wanghailong.testpropertyanim.customview.WaveView
                     android:id="@+id/waveView"
                     android:layout_width="@dimen/dp_200"
                     android:layout_height="@dimen/dp_200" />
@@ -45,60 +46,64 @@
 
             </FrameLayout>
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.DynamicWave
+            <com.testanim.wanghailong.testpropertyanim.customview.DynamicWave
                 android:layout_width="@dimen/dp_100"
                 android:layout_height="@dimen/dp_100"
                 android:layout_below="@+id/circleImageView" />
 
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.WaveLoadingView
+            <com.testanim.wanghailong.testpropertyanim.customview.WaveLoadingView
                 android:layout_width="@dimen/dp_200"
                 android:layout_height="@dimen/dp_200" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView1
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.RadarView1
                 android:id="@+id/randerViewPoint"
                 android:layout_width="200dp"
                 android:layout_height="200dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.RadarView
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.RadarView
                 android:id="@+id/radarView"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:padding="2dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcProgress
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress
                 android:id="@+id/arcprogress"
                 android:layout_width="200dp"
                 android:layout_height="200dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.SearchView
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.SearchView
                 android:layout_width="200dp"
                 android:layout_height="200dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.ArcScanView
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.ArcScanView
                 android:id="@+id/arc_scanview"
                 android:layout_width="200dp"
                 android:layout_height="200dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.FontView
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.FontView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/white1"
                 android:paddingLeft="@dimen/dp_10" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.ScanView
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.ScanView
                 android:id="@+id/scan_view"
                 android:layout_width="200dp"
                 android:layout_height="200dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.xfermode.Xfermode_Multiply
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.Xfermode_Multiply
                 android:layout_width="@dimen/dp_230"
                 android:layout_height="403dp" />
 
-            <com.testanim.wanghailong.testpropertyanim.customerClass.paint.xfermode.TextWave
-                android:layout_width="@dimen/dp_200"
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.TextWave
                 android:id="@+id/text_wave"
+                android:layout_width="@dimen/dp_200"
                 android:layout_height="@dimen/dp_200" />
+
+
         </LinearLayout>
     </ScrollView>
+
+
 </RelativeLayout>

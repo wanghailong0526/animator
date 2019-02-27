@@ -15,5 +15,8 @@
     <color name="battery_optimize_scan_bg_BG">#BFffffff</color>
     <color name="black">#ff000000</color>
 
+    <color name="colorProgressBg">#dddddd</color>
+    <color name="colorProgress">#0066FF</color>
+
 
 </resources>

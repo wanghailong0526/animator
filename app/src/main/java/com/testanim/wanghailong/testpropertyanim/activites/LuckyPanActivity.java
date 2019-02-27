@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.testanim.wanghailong.testpropertyanim.R;
-import com.testanim.wanghailong.testpropertyanim.customerClass.LuckyPan;
+import com.testanim.wanghailong.testpropertyanim.customview.LuckyPan;
 
 public class LuckyPanActivity extends AppCompatActivity {
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.testanim.wanghailong.testpropertyanim.customerClass.LuckyPan
+    <com.testanim.wanghailong.testpropertyanim.customview.LuckyPan
         android:id="@+id/luckyPan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
