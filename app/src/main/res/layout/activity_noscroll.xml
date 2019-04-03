@@ -25,11 +25,11 @@
 
     <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.Guaguaka
         android:id="@+id/view_guaguaka"
-        android:background="@android:color/darker_gray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/darker_gray" />
 
     <com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.Guaguaka2
         android:id="@+id/view_guaguaka2"
@@ -73,5 +73,32 @@
         </LinearLayout>
     </com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode.GuaGuaKaFrameLayout>
 
+    <TextView
+        android:id="@+id/tv_text_translationY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="testTranslationY"
+        android:textColor="@color/black" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_translationY_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="点击Y增加10" />
+
+        <Button
+            android:id="@+id/btn_translationY_reduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="点击Y减少10" />
+    </LinearLayout>
 </LinearLayout>

@@ -56,6 +56,9 @@ public class Guaguaka extends View {
     private int mTextX;
     private int mTextY;
     private Paint.FontMetrics mFontMetrics;
+    private PorterDuffXfermode mPorterDuffXfermodeClear;
+    private PorterDuffXfermode mPorterDuffXfermodeSrcout;
+    public static final String TAG = "Guaguaka";
 
 
     public Guaguaka(Context context) {
@@ -72,6 +75,9 @@ public class Guaguaka extends View {
     }
 
     private void _init() {
+        System.out.println(TAG + ":init");
+        mPorterDuffXfermodeClear = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
+        mPorterDuffXfermodeSrcout = new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT);
         //绘制path,目标图像,源图像的画笔
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setDither(true);
@@ -118,12 +124,14 @@ public class Guaguaka extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        System.out.println(TAG + ":onMeasure");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         setMeasuredDimension(mWidth, mHeight);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        System.out.println(TAG + ":onSizeChanged");
         super.onSizeChanged(w, h, oldw, oldh);
         mTextCanvas = new Canvas(mBitmap);
         mTextX = (int) ((mWidth - mTextWidth) / 2);
@@ -139,6 +147,7 @@ public class Guaguaka extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        System.out.println(TAG + ":onDraw");
         /**
          * 禁用硬件加速
          * 如果没有刮开:设置 setLayerType(View.LAYER_TYPE_SOFTWARE, null);
@@ -163,11 +172,11 @@ public class Guaguaka extends View {
             canvas.drawBitmap(dstBitmap, 0, 0, mPaint);
             if (isComplete) {
                 //设置 模式 为 clear 用于开奖
-                mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                mPaint.setXfermode(mPorterDuffXfermodeClear);
                 mClear = true;
             } else {
                 //设置 模式 为 SRC_OUT
-                mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
+                mPaint.setXfermode(mPorterDuffXfermodeSrcout);
                 mClear = false;
             }
 

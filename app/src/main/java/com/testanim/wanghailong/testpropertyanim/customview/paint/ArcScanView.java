@@ -27,6 +27,7 @@ public class ArcScanView extends View {
     private float pathDistanceRatio; //路径长度的比值 (0 - 1)
 
     private float mPathMeasureLength;
+    public static final String TAG = "whl:**";
 
     public ArcScanView(Context context) {
         this(context, null);
@@ -51,10 +52,12 @@ public class ArcScanView extends View {
         mRectF = new RectF();
         mPath = new Path();
         mPathMeasure = new PathMeasure();
+        System.out.println(TAG+" init");
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        System.out.println(TAG+" onMeasure");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
@@ -66,6 +69,7 @@ public class ArcScanView extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        System.out.println(TAG+" onSizeChanged");
         super.onSizeChanged(w, h, oldw, oldh);
         mRectF.left = mStrokeWidth / 2;
         mRectF.top = mStrokeWidth / 2;
@@ -78,6 +82,7 @@ public class ArcScanView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        System.out.println(TAG+" onDraw");
         canvas.save();
         mPathMeasureLength = mPathMeasure.getLength();
         float stopD = mPathMeasureLength * pathDistanceRatio; //当前截取的结束点

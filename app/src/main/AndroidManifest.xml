@@ -24,6 +24,8 @@
         <activity android:name=".activites.NoScrollActivity" />
         <activity android:name=".activites.TestConstraintLayoutActivity" />
         <activity android:name=".scroll.CoordinatorLayoutActivity" />
+        <activity android:name=".activites.TestScrollerActivity" />
+        <activity android:name=".activites.TestScrollViewGroupActivity" />
     </application>
 
 </manifest>

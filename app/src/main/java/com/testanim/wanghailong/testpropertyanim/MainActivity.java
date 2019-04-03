@@ -11,6 +11,8 @@ import com.testanim.wanghailong.testpropertyanim.activites.MyEditTextActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.NoScrollActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.PaintActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.TestConstraintLayoutActivity;
+import com.testanim.wanghailong.testpropertyanim.activites.TestScrollViewGroupActivity;
+import com.testanim.wanghailong.testpropertyanim.activites.TestScrollerActivity;
 import com.testanim.wanghailong.testpropertyanim.customview.DynamicHeartView;
 import com.testanim.wanghailong.testpropertyanim.customview.RadarView;
 import com.testanim.wanghailong.testpropertyanim.scroll.CoordinatorLayoutActivity;
@@ -23,17 +25,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mNoscrollView;
     private TextView mTextConstraintLayout;
     private TextView mCoordinatorLayout;
+    private TextView mTestScroller;
+    private TextView mTestScrollViewGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mLuckyPan = findViewById(R.id.tv_lucky_pan);
         mTestPaint = findViewById(R.id.TestPaint);
         mBattery = findViewById(R.id.battery_view);
         mNoscrollView = findViewById(R.id.no_scroll_view);
         mTextConstraintLayout = findViewById(R.id.test_constraintLayout);
         mCoordinatorLayout = findViewById(R.id.test_coordinatorLayout);
+        mTestScroller = findViewById(R.id.test_scroller);
+        mTestScrollViewGroup = findViewById(R.id.test_scroll_view_group);
+
+
         DynamicHeartView mDynamicHeartView = findViewById(R.id.view_heart);
         mDynamicHeartView.startPathAnim(2000);
         RadarView viewById = findViewById(R.id.radarView);
@@ -44,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mNoscrollView.setOnClickListener(this);
         mTextConstraintLayout.setOnClickListener(this);
         mCoordinatorLayout.setOnClickListener(this);
+        mTestScroller.setOnClickListener(this);
+        mTestScrollViewGroup.setOnClickListener(this);
 
         findViewById(R.id.my_edit_text).setOnClickListener(this);
 //        TextView tv = findViewById(R.id.tv);
@@ -147,6 +158,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.test_coordinatorLayout:
                 CoordinatorLayoutActivity.start(this);
+                break;
+            case R.id.test_scroller:
+                TestScrollerActivity.start(this);
+                break;
+            case R.id.test_scroll_view_group:
+                TestScrollViewGroupActivity.start(this);
                 break;
         }
     }

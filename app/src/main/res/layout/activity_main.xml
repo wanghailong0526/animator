@@ -237,6 +237,20 @@
                 android:text="测试CoordinatorLayout"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+            <TextView
+                android:id="@+id/test_scroller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试Scroller"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
+            <TextView
+                android:id="@+id/test_scroll_view_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试ScrollViewGroup"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
