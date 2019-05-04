@@ -1,40 +1,35 @@
 package com.testanim.wanghailong.testpropertyanim.customview.paint.xfermode;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.testanim.wanghailong.testpropertyanim.R;
 
-import java.lang.ref.WeakReference;
 import java.nio.ByteBuffer;
 
 /**
  * @author : wanghailong
  * @description: 刮刮卡
- * 原理就是使用 SRC_OUT 模式，
+ * 原理是使用 SRC_OUT 模式，
  * 当 目标图像 和 源图像 均不为 空白像素时，相交局域会变成空白像素（完全透明），
- * 所以在绘制途径时，使用的画笔颜色不能采用 Color.TRANSPARENT，必须要有颜色值
+ * 所以在绘制路径时，使用的画笔颜色不能采用 Color.TRANSPARENT，必须要有颜色值
+ * <p>
+ * 先画的为dst,后画的为src
  */
 public class Guaguaka extends View {
 
     private Paint mPaint;
-
     private Paint mTextPaint;
     private Bitmap srcBitmap;
     private Bitmap dstBitmap;
@@ -52,7 +47,6 @@ public class Guaguaka extends View {
     private boolean mHasMoved = false;
     private boolean mClear = false;
     private volatile boolean isComplete = false;
-    private Rect mTextBounds = null;
     private int mTextX;
     private int mTextY;
     private Paint.FontMetrics mFontMetrics;
@@ -90,9 +84,8 @@ public class Guaguaka extends View {
 
 
         Drawable srcDrawable = getResources().getDrawable(R.drawable.foreground);
-        // 源图像
+        //源图像
         srcBitmap = getBitmap(srcDrawable);
-//        srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.foreground);
         //目标图像
         dstBitmap = Bitmap.createBitmap(srcBitmap.getWidth(), srcBitmap.getHeight(), Bitmap.Config.ARGB_8888);
         //中奖信息
@@ -112,8 +105,6 @@ public class Guaguaka extends View {
         mFontMetrics = mTextPaint.getFontMetrics();
         mTextHeight = mFontMetrics.descent - mFontMetrics.ascent;
 
-        mTextBounds = new Rect();
-        mTextPaint.getTextBounds(text, 0, text.length(), mTextBounds);
 
         //控件的宽高
         mWidth = srcBitmap.getWidth();
@@ -125,7 +116,6 @@ public class Guaguaka extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         System.out.println(TAG + ":onMeasure");
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         setMeasuredDimension(mWidth, mHeight);
     }
 
@@ -185,7 +175,6 @@ public class Guaguaka extends View {
 
             mPaint.setXfermode(null);
             canvas.restoreToCount(layerID);
-//        canvas.restore();
         }
 
     }

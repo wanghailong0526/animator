@@ -178,6 +178,42 @@
     <!--app:layout_constraintLeft_toLeftOf="parent"-->
     <!--app:layout_constraintRight_toLeftOf="@id/guideline"-->
     <!--app:layout_constraintTop_toTopOf="parent" />-->
+    <!--droid:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--&gt;-->
 
+    <TextView
+        android:id="@+id/chain1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="chain1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/chain2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView2" />
 
+    <TextView
+        android:id="@+id/chain2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="chain2"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/chain1"
+        app:layout_constraintRight_toLeftOf="@+id/chain3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView2" />
+
+    <TextView
+        android:id="@+id/chain3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="chain3"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/chain2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView2" />
 </android.support.constraint.ConstraintLayout>

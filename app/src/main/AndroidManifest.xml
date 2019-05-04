@@ -26,6 +26,7 @@
         <activity android:name=".scroll.CoordinatorLayoutActivity" />
         <activity android:name=".activites.TestScrollerActivity" />
         <activity android:name=".activites.TestScrollViewGroupActivity" />
+        <activity android:name="com.testanim.wanghailong.testdoordinatorlayout.testNestedScrollView.NestedScrollViewActivity" />
     </application>
 
 </manifest>

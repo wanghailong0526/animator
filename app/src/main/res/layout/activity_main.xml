@@ -216,6 +216,7 @@
                 android:text="myEditTextView"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+
             <TextView
                 android:id="@+id/no_scroll_view"
                 android:layout_width="wrap_content"
@@ -223,6 +224,7 @@
                 android:text="noScrollView"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+
             <TextView
                 android:id="@+id/test_constraintLayout"
                 android:layout_width="wrap_content"
@@ -230,6 +232,7 @@
                 android:text="测试ConstraintLayout"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+
             <TextView
                 android:id="@+id/test_coordinatorLayout"
                 android:layout_width="wrap_content"
@@ -237,6 +240,7 @@
                 android:text="测试CoordinatorLayout"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+
             <TextView
                 android:id="@+id/test_scroller"
                 android:layout_width="wrap_content"
@@ -244,11 +248,20 @@
                 android:text="测试Scroller"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+
             <TextView
                 android:id="@+id/test_scroll_view_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="测试ScrollViewGroup"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
+
+            <TextView
+                android:id="@+id/test_nested_scroll_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试NestedScrollView"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
         </LinearLayout>
