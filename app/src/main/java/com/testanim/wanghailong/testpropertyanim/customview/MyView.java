@@ -19,7 +19,7 @@ import android.view.animation.BounceInterpolator;
 public class MyView extends View {
     private Paint mPaint;
     private Point currentPoint;
-    public static final float RADIOS = 50f;
+    public static final float RADIUS = 50f;
 
     public String getColor() {
         return color;
@@ -45,7 +45,7 @@ public class MyView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         if (currentPoint == null) {
-            currentPoint = new Point(RADIOS, RADIOS);
+            currentPoint = new Point(RADIUS, RADIUS);
             drawCircle(canvas);
             startAnimator();
         } else {
@@ -56,12 +56,12 @@ public class MyView extends View {
     private void drawCircle(Canvas canvas) {
         float x = currentPoint.getX();
         float y = currentPoint.getY();
-        canvas.drawCircle(x, y, RADIOS, mPaint);
+        canvas.drawCircle(x, y, RADIUS, mPaint);
     }
 
     private void startAnimator() {
-        Point startPoint = new Point(getWidth()/2, RADIOS);
-        Point endPoint = new Point(getWidth()/2, getHeight()-RADIOS);
+        Point startPoint = new Point(getWidth()/2, RADIUS);
+        Point endPoint = new Point(getWidth()/2, getHeight()- RADIUS);
         ValueAnimator valueAnimator = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override

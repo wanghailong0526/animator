@@ -14,7 +14,7 @@ import com.testanim.wanghailong.testpropertyanim.R;
 
 /**
  * @author : wanghailong
- * @description:
+ * @description: 扇形扫描的view, 扇形的尾部跟随扫描
  */
 public class ArcScanView extends View {
     private int mStrokeWidth = 6;
@@ -52,12 +52,12 @@ public class ArcScanView extends View {
         mRectF = new RectF();
         mPath = new Path();
         mPathMeasure = new PathMeasure();
-        System.out.println(TAG+" init");
+        System.out.println(TAG + " init");
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        System.out.println(TAG+" onMeasure");
+        System.out.println(TAG + " onMeasure");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
@@ -69,7 +69,7 @@ public class ArcScanView extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        System.out.println(TAG+" onSizeChanged");
+        System.out.println(TAG + " onSizeChanged");
         super.onSizeChanged(w, h, oldw, oldh);
         mRectF.left = mStrokeWidth / 2;
         mRectF.top = mStrokeWidth / 2;
@@ -82,7 +82,7 @@ public class ArcScanView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        System.out.println(TAG+" onDraw");
+        System.out.println(TAG + " onDraw");
         canvas.save();
         mPathMeasureLength = mPathMeasure.getLength();
         float stopD = mPathMeasureLength * pathDistanceRatio; //当前截取的结束点
