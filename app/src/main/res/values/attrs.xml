@@ -1,18 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="MyEditText">
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-        <!-- 设置自定义输入框的模式 当值为1:普通输入框模式 2:银行卡号输入框模式 3:电话号码模式 默认为1-->
-        <attr name="editTextMode" format="integer" />
-        <!-- 配置自定义控件在银行卡号模式下分隔位数 ,默认为4位 -->
-        <attr name="splitNumber" format="integer" />
+    <!--波浪控件效果属性定义-->
+    <declare-styleable name="RippleView">
+        <attr name="rv_alpha" format="integer" />
+        <attr name="rv_framerate" format="integer" />
+        <attr name="rv_rippleDuration" format="integer" />
+        <attr name="rv_zoomDuration" format="integer" />
+        <attr name="rv_color" format="color" />
+        <attr name="rv_centered" format="boolean" />
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0" />
+            <enum name="doubleRipple" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension" />
+        <attr name="rv_zoom" format="boolean" />
+        <attr name="rv_zoomScale" format="float" />
 
     </declare-styleable>
+    <!--ExpandTextView-->
+    <declare-styleable name="EllipsizeTextView">
+        <attr name="ellipsize_text_Symbol" format="reference" />
+        <attr name="maxLineCount" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="BillDetailView">
+        <attr name="right_text_bold" format="boolean" />
+        <attr name="left_text_bold" format="boolean" />
+        <attr name="right_text_color" format="reference" />
+        <attr name="left_text_color" format="reference" />
 
-    <declare-styleable name="GuaGuaKaFrameLayout">
-        <attr name="ggk_strokeWidth" format="dimension" />
-        <attr name="ggk_foreground" format="reference|color" />
-        <attr name="ggk_percentage" format="float" />
+    </declare-styleable>
+    <declare-styleable name="VerticalRollingTextView">
+        <!--文字颜色-->
+        <attr name="android:textColor" />
+        <!--文字大小-->
+        <attr name="android:textSize" />
+        <!--滚动动画时长-->
+        <attr name="android:duration" />
+        <!--两次动画之间的间隔-->
+        <attr name="animInterval" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="pickerview">
+        <attr name="pickerview_gravity">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+        </attr>
+        <attr name="pickerview_textSize" format="dimension" />
+        <attr name="pickerview_textColorOut" format="color" />
+        <attr name="pickerview_textColorCenter" format="color" />
+        <attr name="pickerview_dividerColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ItemView">
+        <attr name="OptionType" format="string" />
+        <attr name="ItemTitle" format="string" />
+        <attr name="Icon" format="reference" />
+        <attr name="RightIcon" format="reference" />
+        <attr name="NoTopPadding" format="boolean" />
+        <attr name="InputType" format="string" />
+        <attr name="MaxLength" format="integer" />
+        <attr name="ItemText" format="string" />
+        <attr name="TextHint" format="string" />
+        <attr name="TitleSize" format="dimension" />
+        <attr name="TitleWidth" format="dimension" />
+        <attr name="TextSize" format="dimension" />
+        <attr name="TextGravity" format="string" />
+        <attr name="ActionGo" format="boolean" />
+        <attr name="SingleLine" format="boolean" />
+        <attr name="NoArrow" format="boolean" />
+        <attr name="Background" format="reference" />
+        <attr name="Digits" format="string" />
+        <attr name="Bold" format="boolean" />
+        <attr name="TextContentColor" format="color" />
+    </declare-styleable>
+
+    <!--圆形ImageView-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <!--WaveSideBar-->
+    <declare-styleable name="WaveSideBar">
+        <attr name="sidebar_lazy_respond" format="boolean" />
+        <attr name="sidebar_text_color" format="color" />
+        <attr name="sidebar_max_offset" format="dimension" />
+        <attr name="sidebar_position" format="enum">
+            <enum name="right" value="0" />
+            <enum name="left" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--Banner-->
+    <declare-styleable name="ConvenientBanner">
+        <attr name="canLoop" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PullToRefresh">
+        <!-- A drawable to use as the background of the Refreshable View -->
+        <attr name="ptrRefreshableViewBackground" format="reference|color" />
+        <!-- A drawable to use as the background of the Header and Footer Loading Views -->
+        <attr name="ptrHeaderBackground" format="reference|color" />
+        <!-- Text Color of the Header and Footer Loading Views -->
+        <attr name="ptrHeaderTextColor" format="reference|color" />
+        <!-- Text Color of the Header and Footer Loading Views Sub Header -->
+        <attr name="ptrHeaderSubTextColor" format="reference|color" />
+        <!-- Mode of Pull-to-Refresh that should be used -->
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0" />
+            <flag name="pullFromStart" value="0x1" />
+            <flag name="pullFromEnd" value="0x2" />
+            <flag name="both" value="0x3" />
+            <flag name="manualOnly" value="0x4" />
+            <!-- These last two are depreacted -->
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+        </attr>
+        <!-- Whether the Indicator overlay(s) should be used -->
+        <attr name="ptrShowIndicator" format="reference|boolean" />
+        <!-- Drawable to use as Loading Indicator. Changes both Header and Footer. -->
+        <attr name="ptrDrawable" format="reference" />
+        <!-- Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. -->
+        <attr name="ptrDrawableStart" format="reference" />
+        <!-- Drawable to use as Loading Indicator in the Footer View. Overrides value set in ptrDrawable. -->
+        <attr name="ptrDrawableEnd" format="reference" />
+        <!-- Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh. -->
+        <attr name="ptrOverScroll" format="reference|boolean" />
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views -->
+        <attr name="ptrHeaderTextAppearance" format="reference" />
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr name="ptrSubHeaderTextAppearance" format="reference" />
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0" />
+            <flag name="flip" value="0x1" />
+        </attr>
+        <!-- Whether the user can scroll while the View is Refreshing -->
+        <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean" />
+        <!--
+        	Whether PullToRefreshListView has it's extras enabled. This allows the user to be
+        	able to scroll while refreshing, and behaves better. It acheives this by adding
+        	Header and/or Footer Views to the ListView.
+        -->
+        <attr name="ptrListViewExtrasEnabled" format="reference|boolean" />
+        <!--
+        	Whether the Drawable should be continually rotated as you pull. This only
+        	takes effect when using the 'Rotate' Animation Style.
+        -->
+        <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean" />
+        <!-- BELOW HERE ARE DEPRECEATED. DO NOT USE. -->
+        <attr name="ptrAdapterViewBackground" format="reference|color" />
+        <attr name="ptrDrawableTop" format="reference" />
+        <attr name="ptrDrawableBottom" format="reference" />
+    </declare-styleable>
+
+    <attr name="color_no_finger_inner_circle" format="color" />
+    <attr name="color_no_finger_outer_circle" format="color" />
+    <attr name="color_finger_on" format="color" />
+    <attr name="color_finger_up" format="color" />
+    <attr name="count" format="integer" />
+    <attr name="tryTimes" format="integer" />
+
+    <declare-styleable name="WheelView">
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+        <attr name="selectedTextColor" format="color" />
+        <attr name="selectedTextSize" format="dimension" />
+        <attr name="unitHight" format="dimension" />
+        <attr name="itemNumber" format="integer" />
+        <attr name="lineColor" format="color" />
+        <attr name="lineHeight" format="dimension" />
+        <attr name="maskHight" format="dimension" />
+        <attr name="noEmpty" format="boolean" />
+        <attr name="isEnable" format="boolean" />
+        <attr name="isLeft" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SwipeListView">
+        <attr name="swipeOpenOnLongPress" format="boolean" />
+        <attr name="swipeAnimationTime" format="integer" />
+        <attr name="swipeOffsetLeft" format="dimension" />
+        <attr name="swipeOffsetRight" format="dimension" />
+        <attr name="swipeCloseAllItemsWhenMoveList" format="boolean" />
+        <attr name="swipeFrontView" format="reference" />
+        <attr name="swipeBackView" format="reference" />
+        <attr name="swipeMode" format="enum">
+            <enum name="none" value="0" />
+            <enum name="both" value="1" />
+            <enum name="right" value="2" />
+            <enum name="left" value="3" />
+        </attr>
+        <attr name="swipeActionLeft" format="enum">
+            <enum name="reveal" value="0" />
+            <enum name="dismiss" value="1" />
+            <enum name="choice" value="2" />
+        </attr>
+        <attr name="swipeActionRight" format="enum">
+            <enum name="reveal" value="0" />
+            <enum name="dismiss" value="1" />
+            <enum name="choice" value="2" />
+        </attr>
+        <attr name="swipeDrawableChecked" format="reference" />
+        <attr name="swipeDrawableUnchecked" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="drag_edge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+        <attr name="show_mode" format="enum">
+            <enum name="lay_down" value="0" />
+            <enum name="pull_out" value="1" />
+        </attr>
+        <attr name="clickToClose" format="boolean" />
+    </declare-styleable>
+
+    <!-- 滑动ViewPager -->
+    <attr name="visible_tab_count" format="integer" />
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="visible_tab_count" />
+    </declare-styleable>
+
+    <!-- 广告倒计时控件-->
+    <declare-styleable name="CountDownView">
+        <attr name="background_color" format="color" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="text" format="string" />
+        <attr name="text_size" />
+        <attr name="text_color" />
+    </declare-styleable>
+
+    <attr name="text_size" format="dimension" />
+    <attr name="text_color" format="color" />
+
+    <!--数字进度条-->
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer" />
+        <attr name="progress_max" format="integer" />
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_offset" format="dimension" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NumView">
+        <attr name="Text" format="string" />
+        <attr name="Selected" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean" />
+        <attr name="ios" format="boolean" />
+        <attr name="leftSwipe" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AVLoadingIndicatorView">
+        <attr name="minWidth" format="dimension" />
+        <attr name="maxWidth" format="dimension" />
+        <attr name="minHeight" format="dimension" />
+        <attr name="maxHeight" format="dimension" />
+        <attr name="indicatorName" format="string" />
+        <attr name="indicatorColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="StateButton">
+        <!--text color-->
+        <attr name="textColorNormal" format="color|reference" />
+        <attr name="pressedTextColor" format="color|reference" />
+        <attr name="unableTextColor" format="color|reference" />
+        <!--stroke width and color, dash width, dash gap-->
+        <attr name="strokeDashWidth" format="dimension|reference" />
+        <attr name="strokeDashGap" format="dimension|reference" />
+        <attr name="normalStrokeWidth" format="dimension|reference" />
+        <attr name="pressedStrokeWidth" format="dimension|reference" />
+        <attr name="unableStrokeWidth" format="dimension|reference" />
+        <attr name="normalStrokeColor" format="color|reference" />
+        <attr name="pressedStrokeColor" format="color|reference" />
+        <attr name="unableStrokeColor" format="color|reference" />
+        <!--background color-->
+        <attr name="normalBackgroundColor" format="color|reference" />
+        <attr name="pressedBackgroundColor" format="color|reference" />
+        <attr name="unableBackgroundColor" format="color|reference" />
+        <!--background radius-->
+        <attr name="radius" format="dimension|reference" />
+        <attr name="round" format="boolean|reference" />
+        <!--animation duration-->
+        <attr name="animationDuration" format="integer|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DrawableTextView">
+        <attr name="leftDrawable" format="reference|color" />
+        <attr name="rightDrawable" format="reference|color" />
+        <attr name="topDrawable" format="reference|color" />
+        <attr name="bottomDrawable" format="reference|color" />
+
+        <attr name="leftDrawableWidth" format="reference|dimension" />
+        <attr name="rightDrawableWidth" format="reference|dimension" />
+        <attr name="topDrawableWidth" format="reference|dimension" />
+        <attr name="bottomDrawableWidth" format="reference|dimension" />
+
+        <attr name="leftDrawableHeight" format="reference|dimension" />
+        <attr name="rightDrawableHeight" format="reference|dimension" />
+        <attr name="topDrawableHeight" format="reference|dimension" />
+        <attr name="bottomDrawableHeight" format="reference|dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="IULGView">
+        <attr name="isPureDisplay" format="boolean" />
+        <attr name="textColorAddImg" format="color|reference" />
+        <attr name="imgColor" format="color|reference" />
+        <attr name="isShowNumMax" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="VerificationCodeView">
+        <attr name="passwordLength" format="integer" />
+        <attr name="passwordPadding" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="cursorFlashTime" format="integer" />
+        <attr name="isCursorEnable" format="boolean" />
+        <attr name="cursorColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="padding_text_line" format="dimension" />
+    </declare-styleable>
+
+    <!--商品详情下拉上拉-->
+    <declare-styleable name="DragScrollDetailsLayout">
+        <!-- float value for indicate the moment of switch panel-->
+        <attr name="percent" format="float" />
+        <!-- how long the animation keep-->
+        <attr name="duration" format="integer" />
+        <!-- default panel to show after init-->
+        <attr name="default_panel" format="enum">
+            <enum name="front" value="0" />
+            <enum name="behind" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--确认订单开关-->
+    <declare-styleable name="SwitchButton" tools:ignore="ResourceName">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswThumbRangeRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+        <attr name="kswTextOn" format="string" />
+        <attr name="kswTextOff" format="string" />
+        <attr name="kswTextThumbInset" format="dimension" />
+        <attr name="kswTextExtra" format="dimension" />
+        <attr name="kswTextAdjust" format="dimension" />
+    </declare-styleable>
+
+    <!--确认订单开关-->
+    <declare-styleable name="AutoLinearLayout" tools:ignore="ResourceName">
+        <attr name="autoIsCreditPay" format="boolean" />
+        <attr name="item_margintop" format="dimension" />
+        <attr name="item_marginbottom" format="dimension" />
+        <attr name="item_marginleft" format="dimension" />
+        <attr name="item_marginright" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MainTabView" tools:ignore="ResourceName">
+        <attr name="is_selected" format="boolean" />
+        <attr name="img_selected" format="reference" />
+        <attr name="img_unselected" format="reference" />
+        <attr name="text_show" format="string" />
+        <attr name="color_selected" format="color|dimension" />
+        <attr name="color_unselected" format="color|dimension" />
+        <attr name="text_size_tab" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="IconTextView">
+        <attr name="leftIcon" format="reference" />
+        <attr name="text_right" format="string|reference" />
+        <attr name="text_size" />
+        <attr name="text_color" />
+    </declare-styleable>
+    <attr name="startColor" format="color|reference" />
+    <attr name="endColor" format="color|reference" />
+    <declare-styleable name="GradientTextView">
+        <attr name="startColor" />
+        <attr name="endColor" />
+    </declare-styleable>
+    <declare-styleable name="BgConstrainLayout">
+        <attr name="startColor" />
+        <attr name="endColor" />
+        <attr name="isUseDefaultColor" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleTimeView">
+        <attr name="circle_width" format="integer" />
+        <attr name="circle_color" format="string" />
+        <attr name="max_time" format="integer" />
+        <attr name="time_text_size" format="integer" />
+        <attr name="time_text_color" format="string" />
+        <attr name="redus_color" format="string" />
+        <attr name="text_redus" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="WaterRippleView">
+        <attr name="rippleSpacing" format="dimension|reference" />
+        <attr name="rippleCount" format="integer|reference" />
+        <attr name="waterRippleColor" format="color|reference" />
+        <attr name="rippleCenterIcon" format="reference" />
+        <attr name="rippleAutoRunning" format="boolean" />
+        <attr name="rippleSpeed" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="EditTextHint">
+        <attr name="hintTextStyle" >
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="hintTextSize" format="dimension|reference" />
     </declare-styleable>
 
 </resources>

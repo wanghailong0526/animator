@@ -27,6 +27,7 @@ public class CircleImageView extends AppCompatImageView {
 
     private float mScale; //图片的缩放比例
     private BitmapShader bitmapShader;
+    private PaintFlagsDrawFilter mDrawFilter;
 
     public CircleImageView(Context context) {
         super(context);
@@ -44,6 +45,7 @@ public class CircleImageView extends AppCompatImageView {
     }
 
     private void init() {
+        mDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
         mPaint = new Paint();
         mPaint.setDither(true);
         mPaint.setAntiAlias(true);
@@ -64,8 +66,7 @@ public class CircleImageView extends AppCompatImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.setDrawFilter(new PaintFlagsDrawFilter(0,
-                Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
+        canvas.setDrawFilter(mDrawFilter);
         canvas.drawColor(Color.TRANSPARENT);
         Bitmap bitmap = drawableToBitmap(getDrawable());
         //初始化BitmapShader，传入bitmap对象

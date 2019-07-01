@@ -20,6 +20,7 @@ import android.view.animation.LinearInterpolator;
  * 先画的是dst,后画的是src
  */
 public class TextWave extends View {
+    public  PorterDuffXfermode XFERMODE_DST_IN = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
     Paint mPaint = null;
     Paint mTextPaint = null;
     Path mPath = null;
@@ -32,6 +33,8 @@ public class TextWave extends View {
     private float dx = 0f;
     private ValueAnimator mAnimator;
     private int mWidth, mHeight;
+    private Canvas mDstCanvas;
+    private Canvas mSrcCanvas;
 
 
     public TextWave(Context context) {
@@ -81,6 +84,8 @@ public class TextWave extends View {
         mHeight = h;
         mSrcBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         mDstBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        mSrcCanvas = new Canvas(mSrcBitmap);
+        mDstCanvas = new Canvas(mDstBitmap);
     }
 
     @Override
@@ -89,8 +94,8 @@ public class TextWave extends View {
         //禁用硬件加速
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
-        Canvas srcCanvas = new Canvas(mSrcBitmap);
-        srcCanvas.drawText(text, mWidth / 2.0f - mTextWidth / 2.0f, mHeight / 2 - mTextHeight / 2, mTextPaint);
+
+        mSrcCanvas.drawText(text, mWidth / 2.0f - mTextWidth / 2.0f, mHeight / 2.0f - mTextHeight / 2, mTextPaint);
 
         //绘制文本 第一遍
         canvas.drawBitmap(mSrcBitmap, 0, 0, mPaint);
@@ -112,16 +117,16 @@ public class TextWave extends View {
         mPath.lineTo(0, mHeight);
         mPath.close();
 
-        Canvas dstCanvas = new Canvas(mDstBitmap);
+
 
         /**擦除 dstCanvas 这个画布上的信息（这个很重要）**/
-        dstCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-        dstCanvas.drawPath(mPath, mPaint);
+        mDstCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        mDstCanvas.drawPath(mPath, mPaint);
 
         //绘制 目标图像
         canvas.drawBitmap(mDstBitmap, 0, 0, mPaint);
 
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        mPaint.setXfermode(XFERMODE_DST_IN);
 
         //绘制 绘制源图像(绘制文本第二遍)
         canvas.drawBitmap(mSrcBitmap, 0, 0, mPaint);

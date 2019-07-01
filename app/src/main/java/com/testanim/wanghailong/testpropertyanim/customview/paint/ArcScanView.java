@@ -28,6 +28,7 @@ public class ArcScanView extends View {
 
     private float mPathMeasureLength;
     public static final String TAG = "whl:**";
+    private Path mDstPath;
 
     public ArcScanView(Context context) {
         this(context, null);
@@ -51,6 +52,7 @@ public class ArcScanView extends View {
         mPaint.setStrokeWidth(mStrokeWidth);
         mRectF = new RectF();
         mPath = new Path();
+        mDstPath = new Path();
         mPathMeasure = new PathMeasure();
         System.out.println(TAG + " init");
     }
@@ -84,20 +86,9 @@ public class ArcScanView extends View {
     protected void onDraw(Canvas canvas) {
         System.out.println(TAG + " onDraw");
         canvas.save();
-        mPathMeasureLength = mPathMeasure.getLength();
-        float stopD = mPathMeasureLength * pathDistanceRatio; //当前截取的结束点
-        float startD = (float) (stopD - ((0.5 - Math.abs(pathDistanceRatio - 0.5)) * (mRectF.right + mRectF.bottom))); //当前截取的开始点
 
-        Path dst = new Path();
-        dst.reset();
-        dst.lineTo(0, 0);
-
-        mPaint.setStyle(Paint.Style.FILL);
-        mPathMeasure.getSegment(startD, stopD, dst, true);
-
-        dst.lineTo(mSize / 2, mSize / 2);//移动到圆心形成扇形，配合Paint.Style.FILL
         canvas.rotate(-90, mSize / 2, mSize / 2);
-        canvas.drawPath(dst, mPaint);
+        canvas.drawPath(mDstPath, mPaint);
 
         canvas.restore();
     }
@@ -110,6 +101,19 @@ public class ArcScanView extends View {
      */
     public void setRatio(float pathDistanceRatio) {
         this.pathDistanceRatio = pathDistanceRatio;
+
+        mPathMeasureLength = mPathMeasure.getLength();
+        float stopD = mPathMeasureLength * pathDistanceRatio; //当前截取的结束点
+        float startD = (float) (stopD - ((0.5 - Math.abs(pathDistanceRatio - 0.5)) * (mRectF.right + mRectF.bottom))); //当前截取的开始点
+
+        mDstPath.reset();
+        mDstPath.lineTo(0, 0);
+
+        mPaint.setStyle(Paint.Style.FILL);
+        mPathMeasure.getSegment(startD, stopD, mDstPath, true);
+
+        mDstPath.lineTo(mSize / 2, mSize / 2);//移动到圆心形成扇形，配合Paint.Style.FILL
+
         postInvalidate();
     }
 

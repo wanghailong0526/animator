@@ -1,6 +1,7 @@
 package com.testanim.wanghailong.testdoordinatorlayout.testNestedScrollView;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
@@ -86,5 +87,10 @@ public class BehaviorScrollHeader extends CoordinatorLayout.Behavior<View> {
     @Override
     public boolean onNestedPreFling(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, float velocityX, float velocityY) {
         return super.onNestedPreFling(coordinatorLayout, child, target, velocityX, velocityY);
+    }
+
+    @Override
+    public boolean getInsetDodgeRect(@NonNull CoordinatorLayout parent, @NonNull View child, @NonNull Rect rect) {
+        return super.getInsetDodgeRect(parent, child, rect);
     }
 }

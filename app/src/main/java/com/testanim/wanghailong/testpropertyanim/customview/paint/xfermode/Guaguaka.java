@@ -22,9 +22,14 @@ import java.nio.ByteBuffer;
  * @author : wanghailong
  * @description: 刮刮卡
  * 原理是使用 SRC_OUT 模式，
- * 当 目标图像 和 源图像 均不为 空白像素时，相交局域会变成空白像素（完全透明），
+ * 当 目标图像 和 源图像 均不为 空白像素时，相交局域会变成空白像素（完全透明),
  * 所以在绘制路径时，使用的画笔颜色不能采用 Color.TRANSPARENT，必须要有颜色值
- * <p>
+ * 0、mPaint.setColor(Color.RED);
+ * 1、canvas.drawDstBitmap(...mPaint);
+ * 2、mPaint.setXfermode(PorderDuff.Mode.SRC_OUT);
+ * 3、canvas.drawSrcBitmap(...mPaint);
+ * 4、mPaint.setXfermode(null);
+ * 这样做清空了srcBitmap与dstBitmap相交区域的图像
  * 先画的为dst,后画的为src
  */
 public class Guaguaka extends View {
@@ -192,12 +197,12 @@ public class Guaguaka extends View {
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-                /*****两点的中点是控制点*****/
                 int dx = (int) Math.abs(event.getX() - eventX);
                 int dy = (int) Math.abs(event.getY() - eventY);
                 if ((dx > 3 || dy > 3) && !isComplete) {
                     mHasMoved = true;
                 }
+                /*****两点的中点是控制点*****/
                 float endX = (event.getX() - eventX) / 2 + eventX;
                 float endY = (event.getY() - eventY) / 2 + eventY;
                 mPath.quadTo(eventX, eventY, endX, endY);
