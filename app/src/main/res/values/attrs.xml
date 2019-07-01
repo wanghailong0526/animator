@@ -442,12 +442,22 @@
     </declare-styleable>
 
     <declare-styleable name="EditTextHint">
-        <attr name="hintTextStyle" >
+        <attr name="hintTextStyle">
             <flag name="normal" value="0" />
             <flag name="bold" value="1" />
             <flag name="italic" value="2" />
         </attr>
         <attr name="hintTextSize" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="GuaGuaKaFrameLayout">
+        <attr name="ggk_foreground" format="reference|color" />
+        <attr name="ggk_strokeWidth" format="dimension" />
+        <attr name="ggk_percentage" format="float" />
+    </declare-styleable>
+    <declare-styleable name="MyEditText">
+        <attr name="editTextMode" format="integer" />
+        <attr name="splitNumber" format="integer" />
     </declare-styleable>
 
 </resources>

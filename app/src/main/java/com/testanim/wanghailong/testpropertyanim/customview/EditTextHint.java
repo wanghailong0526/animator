@@ -47,8 +47,10 @@ public class EditTextHint extends android.support.v7.widget.AppCompatEditText {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mCustomHint = new CustomHint(Typeface.defaultFromStyle(mHintTextStyle), getHint(), mHintTextSize);
-        setHint(mCustomHint);
+        if (getHint() != null && mCustomHint == null) {
+            mCustomHint = new CustomHint(Typeface.defaultFromStyle(mHintTextStyle), getHint(), mHintTextSize);
+            setHint(mCustomHint);
+        }
     }
 
     /**

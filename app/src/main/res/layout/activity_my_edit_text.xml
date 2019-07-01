@@ -100,18 +100,18 @@
             android:gravity="left"
             android:text="手机号" />
 
-        <com.testanim.wanghailong.testpropertyanim.customview.paint.MyEditTextView
-            android:id="@+id/et_phone_number"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:hint="请输入手机号"
-            android:gravity="left|center_vertical"
-            android:inputType="number"
-            android:minHeight="@dimen/dp_30"
-            android:padding="5dp"
-            android:textSize="@dimen/dp_16"
-            app:editTextMode="3" />
+        <!--<com.testanim.wanghailong.testpropertyanim.customview.paint.MyEditTextView-->
+            <!--android:id="@+id/et_phone_number"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="5"-->
+            <!--android:hint="请输入手机号"-->
+            <!--android:gravity="left|center_vertical"-->
+            <!--android:inputType="number"-->
+            <!--android:minHeight="@dimen/dp_30"-->
+            <!--android:padding="5dp"-->
+            <!--android:textSize="@dimen/dp_16"-->
+            <!--app:editTextMode="3" />-->
     </LinearLayout>
 
 </LinearLayout>
