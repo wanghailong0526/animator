@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.text.style.MetricAffectingSpan;
 import android.util.AttributeSet;
 
@@ -47,7 +48,7 @@ public class EditTextHint extends android.support.v7.widget.AppCompatEditText {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        if (getHint() != null && mCustomHint == null) {
+        if (!TextUtils.isEmpty(getHint()) && mCustomHint == null) {
             mCustomHint = new CustomHint(Typeface.defaultFromStyle(mHintTextStyle), getHint(), mHintTextSize);
             setHint(mCustomHint);
         }
