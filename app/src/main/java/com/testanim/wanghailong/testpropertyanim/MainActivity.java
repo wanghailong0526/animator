@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.testanim.wanghailong.testdoordinatorlayout.testNestedScrollView.NestedScrollViewActivity;
+import com.testanim.wanghailong.testcoordinatorlayout.TestcollapsingToolbarLayoutActivity;
+import com.testanim.wanghailong.testcoordinatorlayout.testNestedScrollView.NestedScrollViewActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.BatteryActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.LuckyPanActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.MyEditTextActivity;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTestScroller;
     private TextView mTestScrollViewGroup;
     private TextView mTestNestedScrollView;
+    private TextView mTestCollapsingToolbarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTestScroller = findViewById(R.id.test_scroller);
         mTestScrollViewGroup = findViewById(R.id.test_scroll_view_group);
         mTestNestedScrollView = findViewById(R.id.test_nested_scroll_view);
+        mTestCollapsingToolbarLayout = findViewById(R.id.test_collapsing_toolbar_layout);
 
 
         DynamicHeartView mDynamicHeartView = findViewById(R.id.view_heart);
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTestScroller.setOnClickListener(this);
         mTestScrollViewGroup.setOnClickListener(this);
         mTestNestedScrollView.setOnClickListener(this);
+        mTestCollapsingToolbarLayout.setOnClickListener(this);
 
         findViewById(R.id.my_edit_text).setOnClickListener(this);
 //        TextView tv = findViewById(R.id.tv);
@@ -171,6 +175,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.test_nested_scroll_view:
                 NestedScrollViewActivity.start(this);
+                break;
+                case R.id.test_collapsing_toolbar_layout:
+                TestcollapsingToolbarLayoutActivity.start(this);
                 break;
         }
     }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestPropertyAnim</string>
+    <string name="app_name">练习集合</string>
 
     <!--battery charging-->
     <string name="battery_charging">CHARGING</string>

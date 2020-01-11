@@ -1,4 +1,4 @@
-package com.testanim.wanghailong.testdoordinatorlayout.testNestedScrollView;
+package com.testanim.wanghailong.testcoordinatorlayout.testNestedScrollView;
 
 import android.content.Context;
 import android.content.Intent;

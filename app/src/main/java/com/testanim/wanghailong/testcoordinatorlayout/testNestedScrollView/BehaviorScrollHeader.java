@@ -1,4 +1,4 @@
-package com.testanim.wanghailong.testdoordinatorlayout.testNestedScrollView;
+package com.testanim.wanghailong.testcoordinatorlayout.testNestedScrollView;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.testanim.wanghailong.testpropertyanim.R;
 

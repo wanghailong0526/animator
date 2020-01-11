@@ -59,8 +59,9 @@ public class ScrollViewGroup extends ViewGroup {
 
                 // 如果滑动页面超过当前页面数，那么把屏index定为最大页面数的index。
                 int childCount = getChildCount();
-                if (sonIndex >= childCount)
+                if (sonIndex >= childCount) {
                     sonIndex = childCount - 1;
+                }
 
                 // 现在需要滑动的相对距离。
                 int dx = sonIndex * getWidth() - getScrollX();
