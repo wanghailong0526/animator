@@ -460,4 +460,10 @@
         <attr name="splitNumber" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="AmountView">
+        <attr name="max_amount" format="integer" />
+        <attr name="hint_text" format="string|reference" />
+        <attr name="shadow_color" format="color" />
+    </declare-styleable>
+
 </resources>

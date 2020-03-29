@@ -16,6 +16,33 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.AmountView
+                android:id="@+id/amount_view"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:hint_text="Max Amount"
+                app:max_amount="30000"
+                app:shadow_color="#FFD700" />
+
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.AmountView
+                android:id="@+id/original_amountview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/amount_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp" />
+
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress2
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/arc_progress2"
+                android:layout_width="@dimen/dp_236"
+                android:layout_height="wrap_content" />
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress3
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/arc_progress3"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_200" />
 
             <com.testanim.wanghailong.testpropertyanim.customview.paint.CircleImageView
                 android:id="@+id/circleImageView"

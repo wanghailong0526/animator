@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.testanim.wanghailong.testcoordinatorlayout.TestcollapsingToolbarLayoutActivity;
 import com.testanim.wanghailong.testcoordinatorlayout.testNestedScrollView.NestedScrollViewActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.BatteryActivity;
+import com.testanim.wanghailong.testpropertyanim.activites.FlowLayoutActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.LuckyPanActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.MyEditTextActivity;
 import com.testanim.wanghailong.testpropertyanim.activites.NoScrollActivity;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTestScrollViewGroup;
     private TextView mTestNestedScrollView;
     private TextView mTestCollapsingToolbarLayout;
+    private TextView mTvFlowLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTestScrollViewGroup = findViewById(R.id.test_scroll_view_group);
         mTestNestedScrollView = findViewById(R.id.test_nested_scroll_view);
         mTestCollapsingToolbarLayout = findViewById(R.id.test_collapsing_toolbar_layout);
+        mTvFlowLayout = findViewById(R.id.test_flow_layout);
 
 
         DynamicHeartView mDynamicHeartView = findViewById(R.id.view_heart);
@@ -63,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTestScrollViewGroup.setOnClickListener(this);
         mTestNestedScrollView.setOnClickListener(this);
         mTestCollapsingToolbarLayout.setOnClickListener(this);
+        mTestCollapsingToolbarLayout.setOnClickListener(this);
+        mTvFlowLayout.setOnClickListener(this);
 
         findViewById(R.id.my_edit_text).setOnClickListener(this);
 //        TextView tv = findViewById(R.id.tv);
@@ -176,8 +181,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.test_nested_scroll_view:
                 NestedScrollViewActivity.start(this);
                 break;
-                case R.id.test_collapsing_toolbar_layout:
+            case R.id.test_collapsing_toolbar_layout:
                 TestcollapsingToolbarLayoutActivity.start(this);
+                break;
+            case R.id.test_flow_layout:
+                FlowLayoutActivity.start(this);
                 break;
         }
     }

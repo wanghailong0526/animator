@@ -272,6 +272,14 @@
                 android:text="测试CollapsingToolbarLayout"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/dp_20" />
+
+            <TextView
+                android:id="@+id/test_flow_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试FlowLayout"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_20" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

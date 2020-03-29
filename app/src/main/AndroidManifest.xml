@@ -28,6 +28,9 @@
         <activity android:name=".activites.TestScrollViewGroupActivity" />
         <activity android:name="com.testanim.wanghailong.testcoordinatorlayout.testNestedScrollView.NestedScrollViewActivity" />
         <activity android:name="com.testanim.wanghailong.testcoordinatorlayout.TestcollapsingToolbarLayoutActivity" />
+        <activity android:name=".activites.FlowLayoutActivity" />
+
+
     </application>
 
 </manifest>

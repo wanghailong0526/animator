@@ -1,4 +1,4 @@
-package com.testanim.wanghailong.testpropertyanim.customview.paint;
+package com.testanim.wanghailong.testpropertyanim.customview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

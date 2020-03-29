@@ -9,12 +9,16 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
 import com.testanim.wanghailong.testpropertyanim.R;
 import com.testanim.wanghailong.testpropertyanim.customview.BatteryImageView2;
 import com.testanim.wanghailong.testpropertyanim.customview.WaveView;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.AmountView;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress2;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress3;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcScanView;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.RadarView;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.RadarView1;
@@ -30,6 +34,8 @@ public class PaintActivity extends AppCompatActivity {
     private ArcScanView mArcScanView;
     private ScanView mScanView;
     private TextWave mTextWave;
+    private ArcProgress2 mArcProgress2;
+    private ArcProgress3 mArcProgress3;
 
     public static void start(Context context) {
         Intent intent = new Intent();
@@ -42,6 +48,10 @@ public class PaintActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_pait);
 
+        final AmountView amountView = (AmountView) findViewById(R.id.amount_view);
+        final AmountView originalAmountView = (AmountView) findViewById(R.id.original_amountview);
+        mArcProgress2 = findViewById(R.id.arc_progress2);
+        mArcProgress3 = findViewById(R.id.arc_progress3);
         mArcScanView = findViewById(R.id.arc_scanview);
         mBatteryView = findViewById(R.id.battery_view);
         mWaveView = findViewById(R.id.waveView);
@@ -67,6 +77,19 @@ public class PaintActivity extends AppCompatActivity {
         handler.sendEmptyMessage(0);
 
         initAnimation();
+
+
+        //延时4秒执行动画
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mArcProgress2.setData(10000, 7800);
+                mArcProgress3.setData(10000, 7800);
+                amountView.start();
+                originalAmountView.start();
+            }
+        }, 3000);
+
     }
 
     /**

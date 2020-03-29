@@ -6,4 +6,5 @@
     <string name="battery_charge_time">you have charged </string>
     <string name="battery_charge_complete">Charge Complete</string>
     <string name="scroll_header_behavior">com.testanim.wanghailong.testdoordinatorlayout.testNestedScrollView.BehaviorScrollHeader</string>
+    <string name="default_hint_amount">最高可借金额</string>
 </resources>
