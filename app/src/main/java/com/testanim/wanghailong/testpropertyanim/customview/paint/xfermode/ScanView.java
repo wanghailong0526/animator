@@ -16,7 +16,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * 圆形进度view  通过xfermode图片混合方式实现
+ * 上下扫描view  通过xfermode图片混合方式实现
  * Created by Wanghailong on 2018/5/31.
  */
 public class ScanView extends View {

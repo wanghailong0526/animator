@@ -51,12 +51,12 @@ public class BatteryImageView2 extends AppCompatImageView {
 
     private void init() {
         mBatteryBodyPaint = new Paint();
-        mBatteryBodyPaint.setColor(ContextCompat.getColor(getContext(), R.color.white1));
+        mBatteryBodyPaint.setColor(ContextCompat.getColor(getContext(), R.color.white));
         mBatteryBodyPaint.setAntiAlias(true);
         mBatteryBodyPaint.setDither(true);
 
         mOutCirclePaint = new Paint();
-        mOutCirclePaint.setColor(ContextCompat.getColor(getContext(), R.color.white1));
+        mOutCirclePaint.setColor(ContextCompat.getColor(getContext(), R.color.white));
         mOutCirclePaint.setStyle(Paint.Style.STROKE);
         mOutCirclePaint.setStrokeWidth(OUT_STROKE_WIDTH);
         mOutCirclePaint.setAntiAlias(true);

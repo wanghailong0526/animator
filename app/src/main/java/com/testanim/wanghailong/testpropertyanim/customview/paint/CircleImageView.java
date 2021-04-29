@@ -49,8 +49,6 @@ public class CircleImageView extends AppCompatImageView {
         mPaint = new Paint();
         mPaint.setDither(true);
         mPaint.setAntiAlias(true);
-
-
     }
 
     @Override

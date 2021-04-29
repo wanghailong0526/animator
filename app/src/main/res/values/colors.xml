@@ -6,14 +6,15 @@
     <!--battery charging-->
     <color name="battery_charging">#37CEF9</color>
     <color name="battery_charging_bg">#0C3F5E</color>
-    <color name="white1">#ffffff</color>
+    <color name="white">#ffffff</color>
     <color name="white21">#20FFFFFF</color>
     <color name="white40">#40FFFFFF</color>
-    <color name="radar_view_color">@color/white1</color>
+    <color name="radar_view_color">@color/white</color>
     <color name="battery_optimize_bg">#36b3b9</color>
     <color name="battery_optimize_scan_bg">#4Dffffff</color>
     <color name="battery_optimize_scan_bg_BG">#BFffffff</color>
     <color name="black">#ff000000</color>
+    <color name="orange">#FF4081</color>
 
     <color name="colorProgressBg">#dddddd</color>
     <color name="colorProgress">#0066FF</color>

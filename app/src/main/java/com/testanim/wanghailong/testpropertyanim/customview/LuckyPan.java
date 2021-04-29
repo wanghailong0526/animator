@@ -129,7 +129,7 @@ public class LuckyPan extends SurfaceView implements SurfaceHolder.Callback, Run
             mBitmaps[i] = BitmapFactory.decodeResource(getResources(), mImgs[i]);
         }
 
-        /*****当serviceview创建的时候，启动线程*****/
+        /*****当surfaceview创建的时候，启动线程*****/
         isRunnable = true;
         mDrawableThread = new Thread(this);
         mDrawableThread.start();

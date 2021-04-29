@@ -16,6 +16,15 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+
+
+            <com.testanim.wanghailong.testpropertyanim.customview.paint.AmountArcProgress
+                android:id="@+id/amount_arc_progress"
+                android:layout_width="@dimen/dp_260"
+                android:layout_height="@dimen/dp_260"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone" />
+
             <com.testanim.wanghailong.testpropertyanim.customview.paint.AmountView
                 android:id="@+id/amount_view"
                 android:layout_width="236dp"
@@ -34,15 +43,16 @@
                 android:layout_marginTop="30dp" />
 
             <com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress2
-                android:layout_gravity="center_horizontal"
                 android:id="@+id/arc_progress2"
                 android:layout_width="@dimen/dp_236"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
             <com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress3
-                android:layout_gravity="center_horizontal"
                 android:id="@+id/arc_progress3"
                 android:layout_width="@dimen/dp_200"
-                android:layout_height="@dimen/dp_200" />
+                android:layout_height="@dimen/dp_200"
+                android:layout_gravity="center_horizontal" />
 
             <com.testanim.wanghailong.testpropertyanim.customview.paint.CircleImageView
                 android:id="@+id/circleImageView"
@@ -112,7 +122,7 @@
             <com.testanim.wanghailong.testpropertyanim.customview.paint.FontView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/white1"
+                android:background="@color/white"
                 android:paddingLeft="@dimen/dp_10" />
             <!--支持 单独设置hint text style, hint text size-->
             <com.testanim.wanghailong.testpropertyanim.customview.EditTextHint

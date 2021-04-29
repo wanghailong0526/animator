@@ -69,7 +69,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/battery_charging_progress"
         android:text="@string/battery_charging"
-        android:textColor="@color/white1"
+        android:textColor="@color/white"
         android:textSize="@dimen/battery_charging_text" />
 
 </RelativeLayout>

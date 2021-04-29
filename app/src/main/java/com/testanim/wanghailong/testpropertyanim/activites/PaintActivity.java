@@ -15,6 +15,7 @@ import android.view.animation.AccelerateInterpolator;
 import com.testanim.wanghailong.testpropertyanim.R;
 import com.testanim.wanghailong.testpropertyanim.customview.BatteryImageView2;
 import com.testanim.wanghailong.testpropertyanim.customview.WaveView;
+import com.testanim.wanghailong.testpropertyanim.customview.paint.AmountArcProgress;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.AmountView;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress;
 import com.testanim.wanghailong.testpropertyanim.customview.paint.ArcProgress2;
@@ -34,6 +35,7 @@ public class PaintActivity extends AppCompatActivity {
     private ArcScanView mArcScanView;
     private ScanView mScanView;
     private TextWave mTextWave;
+    private AmountArcProgress mAmountArcProgress;
     private ArcProgress2 mArcProgress2;
     private ArcProgress3 mArcProgress3;
 
@@ -50,6 +52,7 @@ public class PaintActivity extends AppCompatActivity {
 
         final AmountView amountView = (AmountView) findViewById(R.id.amount_view);
         final AmountView originalAmountView = (AmountView) findViewById(R.id.original_amountview);
+        mAmountArcProgress = findViewById(R.id.amount_arc_progress);
         mArcProgress2 = findViewById(R.id.arc_progress2);
         mArcProgress3 = findViewById(R.id.arc_progress3);
         mArcScanView = findViewById(R.id.arc_scanview);
@@ -85,6 +88,7 @@ public class PaintActivity extends AppCompatActivity {
             public void run() {
                 mArcProgress2.setData(10000, 7800);
                 mArcProgress3.setData(10000, 7800);
+                mAmountArcProgress.setData(50000, 30000, "当前可借(元)", "总额度50000元");
                 amountView.start();
                 originalAmountView.start();
             }

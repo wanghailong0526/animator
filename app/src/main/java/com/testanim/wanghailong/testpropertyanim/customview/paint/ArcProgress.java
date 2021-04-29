@@ -85,9 +85,8 @@ public class ArcProgress extends View {
         mRectF.top = mStrokeWidth / 2;
         mRectF.right = mSize - mStrokeWidth / 2;
         mRectF.bottom = mSize - mStrokeWidth / 2;
-        /*****起始角度为270度减去整个圆的一半,顺时针旋转****/
+        /*****起始角度为270度减去整个弧的一半,顺时针旋转****/
         mStartAngle = (270 - mArcAngle / 2);
-
     }
 
     @Override
